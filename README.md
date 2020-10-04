@@ -18,7 +18,7 @@ We wish to not only overcome these shortcomings but also set a benchmark by addi
 2. Option to set reminders for timely ingestion of medicines.
 3. Automate delivery of medicines which are prescribed monthly (i.e are to be consumed in a routine)
 4. Scheduling/Cancelling appointments with the hospital via the app.
-5. A symptom tracker for assessing the severity of current symptoms with an option for consultation about them according to priority.
+5. An FAQ chatbot for answering all your queries including covid details as well.
 6. Booking at-home lab tests with the hospital via the app.
 7. Browsing through health insurance plans and options.
 
