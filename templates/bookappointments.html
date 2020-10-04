@@ -1,14 +1,118 @@
 {% extends "base.html" %}
 {% block bookappointment_page %}
-	
+	<script>
+		function select_speciality(){
+			var speciality = document.getElementById('specialities').value;
+			if (speciality=="Anaesthesia"){
+				var array = ['Dr. Lilavati Johal', 'Dr. Ritu Mehrotra']
+			}
+			else if(speciality=="Medical Gastroenterology"){
+				var array = ['Dr. Kushal Singh ', 'Dr. Advik Naik']
+
+			}
+			else if(speciality=="Neurology"){
+				var array = ['Dr. Vasudha Shenoy ','Dr. Kshitij Kapadia', 'Dr. Arushi Sidhu']
+			}
+			else if(speciality=="Nutrition & Dietetics"){
+				var array = ['Dr. Navin Bhatia ','Dr. Vinay Barman', 'Dr. Dipa Raja']
+			}
+			else if(speciality=="Orthopedics & Joint Replacement"){
+				var array = ['Dr. Rudra Mannan ','Dr. Kiran Dada', 'Dr. Amit Sachar', 'Dr. Viti Krishna']
+			}
+			else if(speciality=="Cardiology - Non Interventional"){
+				var array = ['Dr. Sonam Majumdar ','Dr. Roshan Dhar']
+			}
+			else if(speciality=="Emergency Medicine"){
+				var array = ['Dr. Malati Pal ','Dr. Padma Bora', 'Dr. Shreya Grewal', 'Dr. Pran Dubey']
+			}
+			else if(speciality=="Dermatology And Cosmetology"){
+				var array = ['Dr. Aditi Sangha ', 'Dr. Parth Sathe']
+			}
+
+			var string = ""
+			for( i=0; i< array.length;i++){
+				string = string + '<option>'+ array[i]+ '</option>'
+			}
+
+			document.getElementById("doctors").innerHTML = string;
+
+			
+
+		}
+
+		function setAppointment(){
+			var string = '<h4>'+"Your appointment is scheduled successfully!"+'</h4>'
+							+'<h4>'+"Time slot will be notified through message."+'</h4>'							
+			document.getElementById("AppointmentSet").innerHTML = string;
+		}
+	</script>
  	<section id="contact" class="contact">
  		<div class="container">
                 <div class="section-title">
                   <h2>Book Appointments</h2>
-        		</div>
-        </div>
- 	</section>
+				</div>
+				<div class="col mt-5 mt-lg-0">
+					<!-- <div class="col-6 mt-5 mt-lg-0"> -->
+					  
+	  
+					  <form action="#" method="POST" role="form" class="php-bookAppointment-form" onsubmit="return validate() ">
+	  
+						<div class="form-group">
+							<input type="date" name="fname" class="form-control" id="name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required/>
+							<div class="validate"></div>
+						</div>
+	  
+						<div class="form-group">
+							<select id= "specialities" class="form-control" placeholder="Select speciality" onchange="select_speciality()" required>
+								<option value="none" selected disabled hidden> 
+									Select speciality
+								</option>
+								<option>Anaesthesia</option>
+								<option>Medical Gastroenterology</option>
+								<option>Neurology</option>
+								<option>Nutrition & Dietetics</option>
+								<option>Orthopedics & Joint Replacement</option>
+								<option>Cardiology - Non Interventional</option>
+								<option>Emergency Medicine</option>
+								<option>Dermatology And Cosmetology</option>
+							</select>						  
+							<div class="validate"></div>
+						</div>
+						<div>
+							
+						</div>
+						<div class="form-group">
+							<select id = "doctors" class="form-control" select="none" required>
+								<option value="none" selected disabled hidden> 
+									Select doctor
+								</option>
+							</select>
+							<div class="validate"></div>
+						</div>
+						
+						<div class="text-center"><p><a href="#" class="appointment-btn scrollto" type="submit" onclick="setAppointment()">Schedule Appointment</a></p></div>
+                 		<div class="text-center">{{msg}}</div>
+                  <!-- <br>  -->
+                  <!-- <div class="text-center"><p>OR</p></div> -->
+                  <!-- <div class="text-center"><a href="{{ url_for('login') }}">Login here</a></div> -->
+                  <!-- <a href="{{ url_for('login') }}">Login here</a> -->
+
+                </form>
+					</div><!-- col end-->
+					<div class="section-title" id="AppointmentSet">
+					</div>
+             <!--   <div class="col-6 mt-5 mt-lg-0">
+                    <img src="{{ url_for('static', filename='static/img/departments-1.jpg') }} align="middle" />
+			   </div>
+			   
+
+			   
+
+ -->
+</div>
+
+</div>
+</section>
 
 
-	
 {% endblock %}
