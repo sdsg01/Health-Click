@@ -64,34 +64,36 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-      <!-- <img src="{{ url_for('static', filename = 'img/meds/favicon.png') }}" alt=""> -->
-      <h1 class="logo mr-auto"><a href="{{ url_for('home') }}">HealthClick</a></h1>
-          
+
+      <h1 class="logo mr-auto"><i class="icofont-doctor-alt"></i><a href="{{ url_for('home') }}">HealthClick</a></h1>
+
+      
       <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li><a href="{{ url_for('about') }}">About Us</a></li>
-          <li class="drop-down"><a href="">Services</a>
-            <ul>
-              <li><a href="{{ url_for('symptom') }}">FAQ Chatbot</a></li>
-              <li><a href="{{ url_for('meds') }}">Order Medicines</a></li>
-              <li><a href="#">Monthly Subscription</a></li>
-              <li><a href="#">Schedule an Appointment</a></li>
-              <li><a href="#">At Home Tests</a></li>
-              <li><a href="#">Medicine Reminder</a></li>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About Us</a></li>
+        <li class="drop-down"><a href="{{ url_for('home') }}">Services</a>
+          <ul>
+            <li><a href="{{ url_for('symptom') }}">FAQ Chatbot</a></li>
+            <li><a href="{{ url_for('meds') }}">Order Medicines</a></li>
+            <li><a href="{{ url_for('monthlySubs') }}">Monthly Subscription</a></li>
+            <li><a href="{{ url_for('bookAppointments') }}">Schedule an Appointment</a></li>
+            <li><a href="{{ url_for('atHomeLab') }}">At Home Tests</a></li>
+            <li><a href="{{ url_for('medReminder') }}">Medicine Reminder</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ url_for('insurance') }}">Insurance Guide</a></li>
+        
+        
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        {% block navchange%}
+        {% endblock %}
 
-            </ul>
-          </li>
-          <li><a href="{{ url_for('insurance') }}">Insurance Guide</a></li>
+      </ul>
 
-          <!-- <li><a href="{{ url_for('symptom') }}">Symptom Tracker</a></li>
-          <li><a href="{{ url_for('meds') }}">Order Meds</a></li> -->
-          <li><a href="{{ url_for('login') }}">Login</a></li>
-          <li><a href="{{ url_for('register') }}">Register</a></li>
-
-        </ul>
-
-      </nav><!-- .nav-menu -->
+    </nav><!-- .nav-menu -->
+     
 
       <!-- <a href="#appointment" class="appointment-btn scrollto">Login</a> -->
 
@@ -103,15 +105,19 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2><b>A telemedicine initiative to bring hospitals and patients closer together</b></h2>
-          <!--<ol>
-             <li><a href="{{ url_for('home') }}">Home</a></li> 
+          <h2>A telemedicine initiative to bring hospitals and patients closer together</h2>
+          
+
+          <!-- <ol>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('meds') }}" class="appointment-btn scrollto">Order Now</a></li>
           </ol> -->
         </div>
 
       </div>
     </section><!-- End Breadcrumbs Section -->
+
+  
 
 
   {% block content %}
@@ -137,6 +143,18 @@
   {% endblock %}
 
   {% block about_page %}
+  {% endblock %}
+
+  {% block bookappointment_page %}
+  {% endblock %}
+
+  {% block athome_page %}  
+  {% endblock %}
+
+  {% block monthlySubs_page %}
+  {% endblock %}
+
+  {% block medReminder_page %}
   {% endblock %}
 
   <!-- ======= Footer ======= -->
