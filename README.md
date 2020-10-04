@@ -1,4 +1,6 @@
-# HealthClick
+# HealthClick 
+
+![alt text](https://github.com/sdsg01/Health-Click/blob/master/static/img/favicon.png?raw=true)
 
 HealthClick is a telemedicine app which can be employed by hospitals to improve patient comfort and experience. In this pandemic, the necessity of remote healthcare has been acutely felt in our society.
 
