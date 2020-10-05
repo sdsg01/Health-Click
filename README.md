@@ -44,8 +44,6 @@ $ mongo
 Our mongoDB setup is ready.
 
 ```sh
-$ python -m venv env
-$ env\Scripts\activate
 $ pip install flask
 $ python appClick.py
 ```
@@ -53,7 +51,7 @@ $ python appClick.py
 Use VSCode or any text editor to view files.
 
 
-### Status:
+### Status/Future Scope:
 We have created a website which we plan to convert into a web app and add some additional functionalities like setting a reminder for intake of medicines, Tracking system for Medicine Delivery.
 
 ### Project Screenshots:
