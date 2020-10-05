@@ -1,12 +1,109 @@
 {% extends "base.html" %}
-{% block athome_page %}
+{% block bookappointment_page %}
+	<script>
+		  
+		function setLabTest(){
+			var string = '<h4>'+"Your Lab Test appointment has been set successfully!"+'</h4>'
+			+ '<h4>'+"We will contact you soon"+'</h4>'
+		 	document.getElementById("LabTestSet").innerHTML = string;
+		}
+    </script>
+    <!--<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>-->
+        
+    
  	<section id="contact" class="contact">
  		<div class="container">
                 <div class="section-title">
-                  <h2>At Home Lab Tests</h2>
-        		</div>
-        </div>
- 	</section>
+                  <h2>At Home Lab Test</h2>
+				</div>
+				<div class="col mt-5 mt-lg-0">
+					<!-- <div class="col-6 mt-5 mt-lg-0"> -->
+					  
+	  
+					  <form action="#" method="POST" role="form" class="php-athomelabtest-form" onsubmit="return validate() ">
+						 
 
+						<div class="form-group">
+                            <input type="date" class="form-control" name="Date" id="subject" placeholder="Date" max="31-12-2020" required/>
+							<div class="validate"></div>
+						</div>
+					
+
+						<div class="form-group">	
+							<input type="time" class="form-control" name="Time" id="subject" placeholder="Time" min="08:00" max="22:00" required/>
+                            <div class="validate"></div>
+						</div>
+
+						 
+						<div class="form-group">
+							<select id= "labtests" class="form-control" placeholder="Select LabTest type" required>
+								<option value="none" selected disabled hidden> 
+									Select LabTest 
+								</option>
+								<option>Allergy</option>
+								<option>Diabetes</option>
+								<option>HIV</option>                          
+								<option>Fever</option>
+								<option>Anemia</option>
+								<option>Fever</option>
+								<option>Heart Diseases</option>
+								<option>HyperTension</option>
+							</select>						  
+							<div class="validate"></div>
+						</div>
+
+						<div class="form-group">
+                            <input type="tel" class="form-control" name="Phone" id="subject" placeholder="Phone Number" minlength="10" maxlength="10" required/>
+                            <div class="validate"></div>
+						</div>
+						
+						
+						<div class="form-group">
+							<input type="text" class="form-control" name="Address" id="subject" placeholder="Address" required/>
+							<div class="validate"></div>
+						</div>
+	  
+						
+						 
+						<!--<div class="form-group">
+							<select id = "doctors" class="form-control" select="none" required>
+								<option value="none" selected disabled hidden> 
+									Select doctor
+								</option>
+							</select>
+							<div class="validate"></div>
+						</div>-->
+						
+						<div class="text-center"><p><a href="#" class="appointment-btn scrollto" type="submit" onclick="setLabTest()">Schedule Lab Test</a></p></div>
+                 		<div class="text-center">{{msg}}</div>
+                  <!-- <br>  -->
+                  <!-- <div class="text-center"><p>OR</p></div> -->
+                  <!-- <div class="text-center"><a href="{{ url_for('login') }}">Login here</a></div> -->
+                  <!-- <a href="{{ url_for('login') }}">Login here</a> -->
+
+                </form>
+					</div><!-- col end-->
+					<div class="section-title" id="LabTestSet">
+					</div>
+             <!--   <div class="col-6 mt-5 mt-lg-0">
+                    <img src="{{ url_for('static', filename='static/img/departments-1.jpg') }} align="middle" />
+			   </div>
+			   
+			   
+ -->
+</div>
+
+</div>
+</section>
+
+<!--</body>
+</html>-->
 
 {% endblock %}
