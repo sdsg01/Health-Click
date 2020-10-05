@@ -15,7 +15,6 @@ Made using Flask, DialogFlow and Bootstrap.
 > access to previous medical records
 > ability to make appointments without calling
 > processing refills for medical prescriptions
-
 > Yet, only 11% of healthcare apps associated with hospitals have these features. A > translation feature is also available to improve accessibility.  
 > We wish to not only overcome these shortcomings but also set a benchmark by adding > more functionalities/features such as:
 
