@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block symptom_page %}
 	<section id="faq" class="faq section-bg">
+		<div class="container">
+			<h2>FAQ Chatbot</h2>
+		</div>
 		<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 		<df-messenger
 		intent="WELCOME"
-		chat-title="Health_Click"
+		chat-title="Ask Me Questions!"
 		agent-id="5d4b1b60-77de-475a-a329-78fdcb753f39"
 		language-code="en"
 		></df-messenger>

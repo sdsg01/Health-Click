@@ -87,14 +87,17 @@ function searchTable(value, data){
 
 	    <div class="container-fluid">
 	        <div class="row no-gutters">
-	        	{% for i,data in itemData.items() %}
+	        	{% for data in items %}
 		          <div class="col-lg-3 col-md-4">
 		            <div class="gallery-item">
-		            	<p>Name: {{data}} </p>
-		            	<p>Price: {{i}}</p>
-		            	<p><img src="{{ url_for('static', filename = 'img/meds/'+data+'.jpeg') }}" alt=""
-		            		height="250" width="300"></p>
-		            	<p><a href="{{ url_for('cart') }}"><button type="submit">Add to Cart</button></a><p>
+			            	<p>Name:<b> {{data.item}} </b></p>
+			            	<p>Price:<b> {{data.price}} </b></p>
+			            	<p><img src="{{ url_for('static', filename = 'img/meds/'+data.item+'.jpeg') }}" alt=""
+			            		height="250" width="300"></p>
+			            <!-- 	<div class="text-center"><button class="appointment-btn scrollto" type="submit">Add to Cart</button></div> -->
+		            	<!-- </form> -->
+		            	<p><a href="{{ url_for('cart', id=data.i) }}" class="appointment-btn scrollto">Add to Cart</a></p>
+		            	<!-- <p><a href="{{ url_for('cart') }}"><button type="submit">Add to Cart</button></a><p> -->
 		            </div>
 		          </div>
 	         	{% endfor %}
